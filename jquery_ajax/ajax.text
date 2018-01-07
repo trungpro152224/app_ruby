@@ -1,0 +1,33 @@
+﻿so sánh ajax thường và ajax request: 
+
+- ajax thường khi người dùng muốn xử lý một chức năng nào đó trong trang web thì trang web đó sẽ được load lại sẽ tốn rất nhiều thời gian của người dùng. ajax request ra đời để phục vụ cho nhu cầu đó, ajax request tạo ra các web động hay các ứng dụng giàu tính Internet. cho phép tăng tốc độ ứng dụng web bằng cách cắt nhỏ dữ liệu và chỉ hiển thị những gì cần thiết, thay vì tải đi tải lại toàn bộ trang web, làm như vậy trang của bạn sẽ muợt và đẹp hơn.
+
+Ưu và nhược điểm:
+
+Ưu điểm:
+
+Trong nhiều trường hợp, các trang web chứa rất nhiều nội dung thông thường trong trang. Nếu sử dụng các phương pháp truyền thống, những nội dung đó sẽ phải nạp lại toàn bộ với từng yêu cầu. Tuy nhiên, nếu sử dụng Ajax, một ứng dụng web có thể chỉ yêu cầu cho các nội dung cần thiết phải cập nhật, do đó giảm lượng lớn băng thông và thời gian nạp trang.
+
+Việc sử dụng Ajax có thể làm giảm các kết nối đến server, do các mã kịch bản (script) và các style sheet chỉ phải yêu cầu một lần.
+
+Nó giúp việc thiết kế web đa dạng hơn và tăng tính tương tác của website với người dùng.
+
+Nó sử dụng các công nghệ đã có sẵn nên dễ học và sử dụng.
+
+Nhờ tính phổ biến của nó, đã khuyến khích việc phát triển các khuôn mẫu mà sẽ giúp lập trình viên tránh khỏi các vết xe đổ trước.
+
+Được hỗ trợ trong các trình duyệt phổ biến hiện nay.
+
+Nhược điểm:
+
+Không thể bookmark nó vào favourite trên trinh duyệt hay gởi link đến cho bạn bè, vì tất cả quá trình nó thực hiện ngầm và không hiển thị trên address. Cũng có những cách khắc phục cho vấn đề này, một số trong đó sử dụng mã xác định đoạn (fragment identifier) URL (phần URL ở sau dấu '#') để lưu vết, và cho phép người dùng đánh dấu và quay lại một trạng thái nào đó của ứng dụng.
+
+Không thể hiện thị nội dung trên các trang tìm kiếm vì các trang tìm kiếm hiện nay vẫn chưa hỗ trợ tìm vì rất khó tìm và gần như không thể tìm đc.
+
+Các trang web được tạo động không được ghi vào bộ lưu lịch sử lướt web của trình duyệt, do đó nút "back" (quay lui) của trình duyệt sẽ mất tác dụng quay lại trang thái trước đó của trang sử dụng Ajax, thay vào đó sẽ quay lại trang web trước đó mà người dùng ghé thăm. Để khắc phục có thể dùng các IFrame không hiển thị để gây ra sự thay đổi trong lịch sử trình duyệt và thay đổi phần neo của URL (bằng mã a #) khi chạy Ajax và theo dõi những sự thay đổi của nó.
+
+Với một số trình duyệt, do nhu cầu bảo mật, sẽ tắt chức năng thực hiện javascript nên ajax không thể chạy, hay trong một vài host, không hỗ trợ vào sâu cấu hình server nên hay bị lỗi “Access denied”. Tương tự, các thiết bị như điện thoại di động, PDA, và thiết bị đọc màn hình (screen reader) có thể không hỗ trợ JavaScript hay đối tượng XMLHttp được yêu cầu. Ngoài ra, các thiết bị đọc màn hình nếu có thể sử dụng Ajax đi nữa cũng vẫn có thể không đọc chính xác các nội dung động.
+
+Việc thiếu các chuẩn cơ bản của Ajax đồng nghĩa với việc không có nhiều sự chọn lựa thực tiễn tốt nhất để kiểm tra các ứng dụng Ajax. Các công cụ kiểm thử cho Ajax thường không hiểu các mô hình sự kiện, mô hình dữ liệu và giao thức của Ajax.
+
+Mở ra một cách thức khác cho việc tấn công của các đoạn mã độc mà những nhà phát triển web có thể không kiểm thử hết được.
