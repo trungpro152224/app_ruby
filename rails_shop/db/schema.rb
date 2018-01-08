@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108021934) do
+ActiveRecord::Schema.define(version: 20180108035905) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,6 +34,21 @@ ActiveRecord::Schema.define(version: 20180108021934) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "labs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
   create_table "products", force: :cascade do |t|
     t.string   "image"
     t.string   "name"
@@ -36,6 +57,18 @@ ActiveRecord::Schema.define(version: 20180108021934) do
     t.integer  "year"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "teaching_assistants", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "ta_duty_id"
+    t.string   "ta_duty_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
   end
 
 end

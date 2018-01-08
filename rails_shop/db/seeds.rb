@@ -6,15 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-cus = Customer.create (name: "Trung", address: "abcdef", number: "0923123")
-cus = Customer.create (name: "Tran", address: "abcdfddef", number: "091308423")
-cus = Customer.create (name: "Huu", address: "abcdedfdfdff", number: "09123")
-cus = Customer.create (name: "Thanh", address: "abcghjghdef", number: "0915423")
 
+user = User.create(name:"Trung")
+user = User.create(name:"Tran")
+user = User.create(name:"Huu")
+user = User.create(name:"Thanh")
 
-user = Customer.create (name: "Trung")
-user = Customer.create (name: "Tran")
-user = Customer.create (name: "Huu")
-user = Customer.create (name: "Thanh")
-
-
+lab = Lab.create(name: "Thuc Hanh")
+lab = Lab.create(name: "Thuc Tap")
+lab = Lab.create(name: "Thuc Thi")
