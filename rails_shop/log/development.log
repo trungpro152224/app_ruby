@@ -3588,3 +3588,490 @@ Migrating to CreateTeachingAssistants (20180108035905)
 [0m
   [1m[36mLab Load (1.8ms)[0m  [1mSELECT "labs".* FROM "labs"[0m
   [1m[35mLab Load (0.2ms)[0m  SELECT  "labs".* FROM "labs"  ORDER BY "labs"."id" ASC LIMIT 1
+  [1m[36mLab Load (5.2ms)[0m  [1mSELECT "labs".* FROM "labs"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBook (20180109043440)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nus/TRANHUUTRUNG/app_ruby/rails_shop/db/migrate/20180109043440_create_book.rb:5)
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nus/TRANHUUTRUNG/app_ruby/rails_shop/db/migrate/20180109043440_create_book.rb:11)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author_id" integer, "published_at" datetime, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_books_on_author_id" ON "books" ("author_id")
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180109043440"]]
+  [1m[35m (87.8ms)[0m  commit transaction
+Migrating to CreateCreateBooks (20180109043621)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "create_books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180109043621"]]
+  [1m[35m (73.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_author_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_author_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Trung"]]
+  [1m[35m (49.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Tran"]]
+  [1m[36m (33.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Huu"]]
+  [1m[35m (62.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Thanh"]]
+  [1m[36m (57.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Hanh"], ["created_at", "2018-01-09 04:45:02.174457"], ["updated_at", "2018-01-09 04:45:02.174457"]]
+  [1m[35m (84.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Thuc Tap"], ["created_at", "2018-01-09 04:45:02.261249"], ["updated_at", "2018-01-09 04:45:02.261249"]]
+  [1m[36m (149.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Thi"], ["created_at", "2018-01-09 04:45:02.412719"], ["updated_at", "2018-01-09 04:45:02.412719"]]
+  [1m[35m (58.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_author_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTables (20180109044906)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nus/TRANHUUTRUNG/app_ruby/rails_shop/db/migrate/20180109044906_create_tables.rb:5)
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTables (20180109044906)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nus/TRANHUUTRUNG/app_ruby/rails_shop/db/migrate/20180109044906_create_tables.rb:5)
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "user" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime, "updated_at" datetime) [0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /home/nus/TRANHUUTRUNG/app_ruby/rails_shop/db/migrate/20180109044906_create_tables.rb:11)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "name" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_pictures_on_user_id" ON "pictures" ("user_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180109044906"]]
+  [1m[35m (64.3ms)[0m  commit transaction
+Migrating to CreatePictures (20180109045012)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePictures (20180109045012)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_author_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[36mUser Load (6.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_author_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Trung"]]
+  [1m[35m (70.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Tran"]]
+  [1m[36m (49.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Huu"]]
+  [1m[35m (32.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Thanh"]]
+  [1m[36m (33.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Hanh"], ["created_at", "2018-01-09 09:58:34.931564"], ["updated_at", "2018-01-09 09:58:34.931564"]]
+  [1m[35m (75.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Thuc Tap"], ["created_at", "2018-01-09 09:58:35.009527"], ["updated_at", "2018-01-09 09:58:35.009527"]]
+  [1m[36m (57.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Thi"], ["created_at", "2018-01-09 09:58:35.068905"], ["updated_at", "2018-01-09 09:58:35.068905"]]
+  [1m[35m (158.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "gf"], ["name", "trungtran"], ["description", "dfdgdfsd"], ["price", 12], ["year", 1993], ["created_at", "2018-01-09 09:58:35.236269"], ["updated_at", "2018-01-09 09:58:35.236269"]]
+  [1m[36m (57.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "ffhjg"], ["name", "dgh"], ["description", "toi ten la tran huu trung"], ["price", 12], ["year", 1993], ["created_at", "2018-01-09 09:58:35.296945"], ["updated_at", "2018-01-09 09:58:35.296945"]]
+  [1m[35m (65.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "tedfdfdfdsf"], ["name", "ghb"], ["description", "que o ben tre"], ["price", 122], ["year", 1993], ["created_at", "2018-01-09 09:58:35.364553"], ["updated_at", "2018-01-09 09:58:35.364553"]]
+  [1m[36m (33.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "rtygsef4"], ["name", "yumkmg"], ["description", "dfdfdfdccv"], ["price", 1342], ["year", 1993], ["created_at", "2018-01-09 09:58:35.400837"], ["updated_at", "2018-01-09 09:58:35.400837"]]
+  [1m[35m (63.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "tedfdfdfdsf"], ["name", "dfdfds"], ["description", "where are you doing?"], ["price", 52], ["year", 1992], ["created_at", "2018-01-09 09:58:35.466778"], ["updated_at", "2018-01-09 09:58:35.466778"]]
+  [1m[36m (40.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "rtrt47df"], ["name", "trungtran"], ["description", "Im fine!"], ["price", 132], ["year", 1533], ["created_at", "2018-01-09 09:58:35.509894"], ["updated_at", "2018-01-09 09:58:35.509894"]]
+  [1m[35m (90.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "gxchbm"], ["name", "trungtran"], ["description", "trdfdffdfs"], ["price", 172], ["year", 19223], ["created_at", "2018-01-09 09:58:35.602837"], ["updated_at", "2018-01-09 09:58:35.602837"]]
+  [1m[36m (122.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "676ukyhdf"], ["name", "abd"], ["description", "trdfdiopj"], ["price", 123], ["year", 1933], ["created_at", "2018-01-09 09:58:35.727895"], ["updated_at", "2018-01-09 09:58:35.727895"]]
+  [1m[35m (49.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "vcvx"], ["created_at", "2018-01-09 09:58:35.785060"], ["updated_at", "2018-01-09 09:58:35.785060"]]
+  [1m[36m (76.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "dfdfs"], ["created_at", "2018-01-09 09:58:35.863420"], ["updated_at", "2018-01-09 09:58:35.863420"]]
+  [1m[35m (32.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:58:35.897830"], ["updated_at", "2018-01-09 09:58:35.897830"]]
+  [1m[36m (32.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "vcds"], ["created_at", "2018-01-09 09:58:35.932388"], ["updated_at", "2018-01-09 09:58:35.932388"]]
+  [1m[35m (49.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "erererdf"], ["created_at", "2018-01-09 09:58:35.983944"], ["updated_at", "2018-01-09 09:58:35.983944"]]
+  [1m[36m (57.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "dvdfyhhk"], ["created_at", "2018-01-09 09:58:36.043373"], ["updated_at", "2018-01-09 09:58:36.043373"]]
+  [1m[35m (132.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:58:36.177491"], ["updated_at", "2018-01-09 09:58:36.177491"]]
+  [1m[36m (50.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "ddfa"], ["created_at", "2018-01-09 09:58:36.229382"], ["updated_at", "2018-01-09 09:58:36.229382"]]
+  [1m[35m (32.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:58:36.264203"], ["updated_at", "2018-01-09 09:58:36.264203"]]
+  [1m[36m (41.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "bbvb"], ["created_at", "2018-01-09 09:58:36.307247"], ["updated_at", "2018-01-09 09:58:36.307247"]]
+  [1m[35m (65.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "riop"], ["created_at", "2018-01-09 09:58:36.374934"], ["updated_at", "2018-01-09 09:58:36.374934"]]
+  [1m[36m (40.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "uku8kx"], ["created_at", "2018-01-09 09:58:36.417705"], ["updated_at", "2018-01-09 09:58:36.417705"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "czxsd"], ["created_at", "2018-01-09 09:58:36.568929"], ["updated_at", "2018-01-09 09:58:36.568929"]]
+  [1m[36m (50.1ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Trung"]]
+  [1m[35m (33.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Tran"]]
+  [1m[36m (51.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Huu"]]
+  [1m[35m (63.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Thanh"]]
+  [1m[36m (175.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Hanh"], ["created_at", "2018-01-09 09:59:07.287254"], ["updated_at", "2018-01-09 09:59:07.287254"]]
+  [1m[35m (67.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Thuc Tap"], ["created_at", "2018-01-09 09:59:07.357585"], ["updated_at", "2018-01-09 09:59:07.357585"]]
+  [1m[36m (32.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Thi"], ["created_at", "2018-01-09 09:59:07.392845"], ["updated_at", "2018-01-09 09:59:07.392845"]]
+  [1m[35m (65.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "gf"], ["name", "trungtran"], ["description", "dfdgdfsd"], ["price", 12], ["year", 1993], ["created_at", "2018-01-09 09:59:07.467451"], ["updated_at", "2018-01-09 09:59:07.467451"]]
+  [1m[36m (57.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "ffhjg"], ["name", "dgh"], ["description", "toi ten la tran huu trung"], ["price", 12], ["year", 1993], ["created_at", "2018-01-09 09:59:07.527928"], ["updated_at", "2018-01-09 09:59:07.527928"]]
+  [1m[35m (57.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "tedfdfdfdsf"], ["name", "ghb"], ["description", "que o ben tre"], ["price", 122], ["year", 1993], ["created_at", "2018-01-09 09:59:07.587664"], ["updated_at", "2018-01-09 09:59:07.587664"]]
+  [1m[36m (150.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "rtygsef4"], ["name", "yumkmg"], ["description", "dfdfdfdccv"], ["price", 1342], ["year", 1993], ["created_at", "2018-01-09 09:59:07.740302"], ["updated_at", "2018-01-09 09:59:07.740302"]]
+  [1m[35m (32.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "tedfdfdfdsf"], ["name", "dfdfds"], ["description", "where are you doing?"], ["price", 52], ["year", 1992], ["created_at", "2018-01-09 09:59:07.774771"], ["updated_at", "2018-01-09 09:59:07.774771"]]
+  [1m[36m (32.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "rtrt47df"], ["name", "trungtran"], ["description", "Im fine!"], ["price", 132], ["year", 1533], ["created_at", "2018-01-09 09:59:07.809374"], ["updated_at", "2018-01-09 09:59:07.809374"]]
+  [1m[35m (32.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "gxchbm"], ["name", "trungtran"], ["description", "trdfdffdfs"], ["price", 172], ["year", 19223], ["created_at", "2018-01-09 09:59:07.843812"], ["updated_at", "2018-01-09 09:59:07.843812"]]
+  [1m[36m (40.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "676ukyhdf"], ["name", "abd"], ["description", "trdfdiopj"], ["price", 123], ["year", 1933], ["created_at", "2018-01-09 09:59:07.886561"], ["updated_at", "2018-01-09 09:59:07.886561"]]
+  [1m[35m (91.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "vcvx"], ["created_at", "2018-01-09 09:59:07.984923"], ["updated_at", "2018-01-09 09:59:07.984923"]]
+  [1m[36m (152.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "dfdfs"], ["created_at", "2018-01-09 09:59:08.139720"], ["updated_at", "2018-01-09 09:59:08.139720"]]
+  [1m[35m (32.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:59:08.174169"], ["updated_at", "2018-01-09 09:59:08.174169"]]
+  [1m[36m (32.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "vcds"], ["created_at", "2018-01-09 09:59:08.208788"], ["updated_at", "2018-01-09 09:59:08.208788"]]
+  [1m[35m (32.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "erererdf"], ["created_at", "2018-01-09 09:59:08.243170"], ["updated_at", "2018-01-09 09:59:08.243170"]]
+  [1m[36m (40.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "dvdfyhhk"], ["created_at", "2018-01-09 09:59:08.285996"], ["updated_at", "2018-01-09 09:59:08.285996"]]
+  [1m[35m (74.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:59:08.362540"], ["updated_at", "2018-01-09 09:59:08.362540"]]
+  [1m[36m (141.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "ddfa"], ["created_at", "2018-01-09 09:59:08.505758"], ["updated_at", "2018-01-09 09:59:08.505758"]]
+  [1m[35m (32.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:59:08.540450"], ["updated_at", "2018-01-09 09:59:08.540450"]]
+  [1m[36m (32.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "bbvb"], ["created_at", "2018-01-09 09:59:08.574864"], ["updated_at", "2018-01-09 09:59:08.574864"]]
+  [1m[35m (65.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "riop"], ["created_at", "2018-01-09 09:59:08.642678"], ["updated_at", "2018-01-09 09:59:08.642678"]]
+  [1m[36m (32.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "uku8kx"], ["created_at", "2018-01-09 09:59:08.677214"], ["updated_at", "2018-01-09 09:59:08.677214"]]
+  [1m[35m (40.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "czxsd"], ["created_at", "2018-01-09 09:59:08.720072"], ["updated_at", "2018-01-09 09:59:08.720072"]]
+  [1m[36m (150.4ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Trung"]]
+  [1m[35m (50.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Tran"]]
+  [1m[36m (33.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("name") VALUES (?)[0m  [["name", "Huu"]]
+  [1m[35m (63.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name") VALUES (?)  [["name", "Thanh"]]
+  [1m[36m (41.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Hanh"], ["created_at", "2018-01-09 09:59:40.196199"], ["updated_at", "2018-01-09 09:59:40.196199"]]
+  [1m[35m (151.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Thuc Tap"], ["created_at", "2018-01-09 09:59:40.350107"], ["updated_at", "2018-01-09 09:59:40.350107"]]
+  [1m[36m (32.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "labs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Thuc Thi"], ["created_at", "2018-01-09 09:59:40.384709"], ["updated_at", "2018-01-09 09:59:40.384709"]]
+  [1m[35m (41.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "gf"], ["name", "trungtran"], ["description", "dfdgdfsd"], ["price", 12], ["year", 1993], ["created_at", "2018-01-09 09:59:40.435919"], ["updated_at", "2018-01-09 09:59:40.435919"]]
+  [1m[36m (57.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "ffhjg"], ["name", "dgh"], ["description", "toi ten la tran huu trung"], ["price", 12], ["year", 1993], ["created_at", "2018-01-09 09:59:40.496454"], ["updated_at", "2018-01-09 09:59:40.496454"]]
+  [1m[35m (40.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "tedfdfdfdsf"], ["name", "ghb"], ["description", "que o ben tre"], ["price", 122], ["year", 1993], ["created_at", "2018-01-09 09:59:40.539219"], ["updated_at", "2018-01-09 09:59:40.539219"]]
+  [1m[36m (65.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "rtygsef4"], ["name", "yumkmg"], ["description", "dfdfdfdccv"], ["price", 1342], ["year", 1993], ["created_at", "2018-01-09 09:59:40.606965"], ["updated_at", "2018-01-09 09:59:40.606965"]]
+  [1m[35m (149.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "tedfdfdfdsf"], ["name", "dfdfds"], ["description", "where are you doing?"], ["price", 52], ["year", 1992], ["created_at", "2018-01-09 09:59:40.758309"], ["updated_at", "2018-01-09 09:59:40.758309"]]
+  [1m[36m (41.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "rtrt47df"], ["name", "trungtran"], ["description", "Im fine!"], ["price", 132], ["year", 1533], ["created_at", "2018-01-09 09:59:40.801657"], ["updated_at", "2018-01-09 09:59:40.801657"]]
+  [1m[35m (32.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["image", "gxchbm"], ["name", "trungtran"], ["description", "trdfdffdfs"], ["price", 172], ["year", 19223], ["created_at", "2018-01-09 09:59:40.836369"], ["updated_at", "2018-01-09 09:59:40.836369"]]
+  [1m[36m (65.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "products" ("image", "name", "description", "price", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["image", "676ukyhdf"], ["name", "abd"], ["description", "trdfdiopj"], ["price", 123], ["year", 1933], ["created_at", "2018-01-09 09:59:40.904344"], ["updated_at", "2018-01-09 09:59:40.904344"]]
+  [1m[35m (57.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "vcvx"], ["created_at", "2018-01-09 09:59:40.970324"], ["updated_at", "2018-01-09 09:59:40.970324"]]
+  [1m[36m (160.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "dfdfs"], ["created_at", "2018-01-09 09:59:41.132735"], ["updated_at", "2018-01-09 09:59:41.132735"]]
+  [1m[35m (49.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:59:41.184718"], ["updated_at", "2018-01-09 09:59:41.184718"]]
+  [1m[36m (65.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "vcds"], ["created_at", "2018-01-09 09:59:41.252219"], ["updated_at", "2018-01-09 09:59:41.252219"]]
+  [1m[35m (49.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "erererdf"], ["created_at", "2018-01-09 09:59:41.303964"], ["updated_at", "2018-01-09 09:59:41.303964"]]
+  [1m[36m (40.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "dvdfyhhk"], ["created_at", "2018-01-09 09:59:41.346520"], ["updated_at", "2018-01-09 09:59:41.346520"]]
+  [1m[35m (49.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:59:41.397858"], ["updated_at", "2018-01-09 09:59:41.397858"]]
+  [1m[36m (116.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "ddfa"], ["created_at", "2018-01-09 09:59:41.516285"], ["updated_at", "2018-01-09 09:59:41.516285"]]
+  [1m[35m (32.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "tedfsdfs"], ["created_at", "2018-01-09 09:59:41.550616"], ["updated_at", "2018-01-09 09:59:41.550616"]]
+  [1m[36m (32.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "bbvb"], ["created_at", "2018-01-09 09:59:41.585251"], ["updated_at", "2018-01-09 09:59:41.585251"]]
+  [1m[35m (32.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "riop"], ["created_at", "2018-01-09 09:59:41.619944"], ["updated_at", "2018-01-09 09:59:41.619944"]]
+  [1m[36m (65.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "I'm OK!"], ["text", "uku8kx"], ["created_at", "2018-01-09 09:59:41.687606"], ["updated_at", "2018-01-09 09:59:41.687606"]]
+  [1m[35m (41.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "I'm OK!"], ["text", "czxsd"], ["created_at", "2018-01-09 09:59:41.730539"], ["updated_at", "2018-01-09 09:59:41.730539"]]
+  [1m[36m (125.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "dfdf"], ["created_at", "2018-01-09 09:59:41.863232"], ["updated_at", "2018-01-09 09:59:41.863232"]]
+  [1m[35m (60.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "fdfsdsd"], ["created_at", "2018-01-09 09:59:41.925570"], ["updated_at", "2018-01-09 09:59:41.925570"]]
+  [1m[36m (49.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "vxcxb"], ["created_at", "2018-01-09 09:59:41.977176"], ["updated_at", "2018-01-09 09:59:41.977176"]]
+  [1m[35m (32.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "kjjuhk"], ["created_at", "2018-01-09 09:59:42.011633"], ["updated_at", "2018-01-09 09:59:42.011633"]]
+  [1m[36m (40.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bchtc"], ["created_at", "2018-01-09 09:59:42.054429"], ["updated_at", "2018-01-09 09:59:42.054429"]]
+  [1m[35m (74.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Zcas"], ["created_at", "2018-01-09 09:59:42.130969"], ["updated_at", "2018-01-09 09:59:42.130969"]]
+  [1m[36m (149.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "cvccxv"], ["created_at", "2018-01-09 09:59:42.282759"], ["updated_at", "2018-01-09 09:59:42.282759"]]
+  [1m[35m (65.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "courses" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "wrerwe"], ["created_at", "2018-01-09 09:59:42.350634"], ["updated_at", "2018-01-09 09:59:42.350634"]]
+  [1m[36m (65.2ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_books_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_books_on_author_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_pictures_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_user_id' AND type='index'
+[0m
+  [1m[36mCourse Load (2.1ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses"  ORDER BY "courses"."id" ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  "courses".* FROM "courses"  ORDER BY "courses"."id" DESC LIMIT 1
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses"[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  "courses".* FROM "courses"  ORDER BY "courses"."id" ASC LIMIT 1
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (name >?)[0m
+  [1m[35mCourse Load (0.8ms)[0m  SELECT "courses".* FROM "courses" WHERE (name =dfdf)
+  [1m[36mCourse Load (1.0ms)[0m  [1mSELECT "courses".* FROM "courses" WHERE (dfdf)[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT "courses".* FROM "courses" WHERE "courses"."name" = ?  [["name", "dfdf"]]

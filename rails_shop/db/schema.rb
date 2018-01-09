@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108035905) do
+ActiveRecord::Schema.define(version: 20180109044906) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -20,8 +20,28 @@ ActiveRecord::Schema.define(version: 20180108035905) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "authors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.integer  "author_id"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "books", ["author_id"], name: "index_books_on_author_id"
+
   create_table "courses", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "create_books", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,6 +59,15 @@ ActiveRecord::Schema.define(version: 20180108035905) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "pictures", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pictures", ["user_id"], name: "index_pictures_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
@@ -65,6 +94,12 @@ ActiveRecord::Schema.define(version: 20180108035905) do
     t.string   "ta_duty_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "user", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
