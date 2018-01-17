@@ -1,0 +1,54 @@
+Rails Database Association
+
+1. Trong rails không nhất thiết phải khai báo từ 2 phía. Chúng ta có thể khai báo association từ 1 phía vẫn sử dụng được. 
+Ví dụ: 
+
+#user
+has_many :posts
+
+khi khai báo như thế ta sẽ sử dụng được các method, option mà assocition cung cấp ví dụ như: user.posts, user.posts.size, ....
+
+2. Cách khai báo has_many nhiều tầng:
+Country has_many Companies, Company has_many Users, User has_many Posts, Post has_many Comments để có thể gọi `country.comments` 
+
+Dùng has_many :through để có thể gọi được country.comments
+#country 
+has_many :companies 
+has_many :users, through: :companies
+has_many :posts, through: :users
+has_many :comments, through: :posts
+
+#company
+has_many :users
+has_many :posts, through: :users
+has_many :comments, through: :posts
+
+#user
+has_many :posts
+has_many :comments, through: :posts
+
+#comments
+belongs_to :post
+belongs_to :country
+belongs_to :user
+belongs_to :company
+
+3. các câu SQL sinh ra khi truy vấn bằng các associations cơ bản:
+user.posts ==>
+select * from post where (user_id = user.id)
+post.user ==>
+select * from user where (user.id = post.user_id)
+
+
+4. Nếu không sử dụng association, để đạt được 1 số mục đích cơ bản trong mối quan hệ giữa User sở hữu nhiều Posts:
+ví dụ: 
+user.posts ==> 
+post = Post.where(user_id:user.id)
+
+user.posts.create ==> 
+post = Post.create(name:"abc", user_id: user.id)
+
+user.posts.first.destroy ==>
+post= Post.first(user_id:user.id)
+post.destroy
+

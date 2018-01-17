@@ -71,20 +71,9 @@ Article.create(title: "I'm OK!", text: "czxsd")
 # Customer.create(name: "dd", address: "123 le van ", number: "etdd")
 
 
-
 # create_table :posts do |t|
 #       t.references :user, index: true, foreign_key: true
 #       t.text :body
-
-# Post.create(body: "dkdfsd")
-# Post.create(body: "trung ")
-# Post.create(body: "ddfdfsd")
-# Post.create(body: "where i am")
-# Post.create(body: "dkddfddhjnb")
-# Post.create(body: "dkdfsdqwecvcv")
-# Post.create(body: "dkdfcvcvc")
-# Post.create(body: "dkdfcxb")
-# Post.create(body: "dkdfssdtgnjgd")
 
 
 Course.create(name: "dfdf")
