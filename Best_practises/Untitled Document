@@ -71,4 +71,5 @@ _form.html.erb
 
 - không nên sử dụng biến đối tượng trong partial. do mỗi form sẽ sử dụng các gọi đối tượng khác nhau nên việc sử dụng lại biến @ sẽ làm cho đối tượng trong form đó thay đổi. 
 
+- không nên sử dụng truy vấn trong view 
 
