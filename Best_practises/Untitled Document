@@ -24,3 +24,6 @@ User.where("name = '#{params[:name]}'")
 ví dụ: 
   add_index :public, :public_id
 
+- sử dụng file seeds.rb thay vì migration để tạo các seed data 
+
+
