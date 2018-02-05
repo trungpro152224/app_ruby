@@ -5,4 +5,8 @@ ví dụ:
  scope :red, -> { where(color: 'red') }
  scope :football, -> {where(favorates: 'football')}
 
-
+- sử dụng cấu trúc lambda trong scope
+ví dụ: 
+scope :today, → { where(published_date: Date.today) }
+thay vì sử dụng:
+scope :today, where(published_date: Date.today))
