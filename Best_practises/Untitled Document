@@ -96,3 +96,21 @@ describe 'if the user is an admin' do
 describe '.authenticate' do
 describe '#admin?' do
 
+- nên sử dụng context để giúp cho testkey rõ nghĩa hơn.
+ví dụ: 
+#BAD
+it 'has 200 status code if logged in' do
+  expect(response).to respond_with 200
+end
+it 'has 401 status code if not logged in' do
+  expect(response).to respond_with 401
+end
+
+#GOOD
+context 'when logged in' do
+  it { is_expected.to respond_with 200 }
+end
+context 'when logged out' do
+  it { is_expected.to respond_with 401 }
+end
+
