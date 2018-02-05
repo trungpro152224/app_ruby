@@ -58,4 +58,6 @@ class PostsController < ApplicationController
 def get_post
 end
 
+- không nên sửa đổi params hash. hash param chứa các dữ liệu đã được gửi yêu cầu, nếu sửa thì không thể truy cập được params đó. nên chép sang một hash params khác và chỉnh sửa. 
+
 
