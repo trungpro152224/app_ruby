@@ -39,4 +39,5 @@ article = Article.order(published_at: :desc).includes(:authors)
 
 - tránh sử dụng các câu lệnh SQL thô bên trong model của rails 
 
-
+- luôn set gía trị mặc định cho boolean trong model
+ví dụ: trung : boolean,  default: true
