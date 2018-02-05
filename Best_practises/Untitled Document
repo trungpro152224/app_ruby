@@ -114,3 +114,15 @@ context 'when logged out' do
   it { is_expected.to respond_with 401 }
 end
 
+- không nên viết description quá dài hơn 40 ký tự. nếu như thế nên sử dụng context để viết ngắn gọn hơn
+
+#BAD
+it 'has 422 status code if an unexpected params will be added' do
+
+ví dụ: 
+
+#GOOD
+context 'when not valid' do
+  it { is_expected.to respond_with 422 }
+end
+
