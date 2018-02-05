@@ -31,3 +31,5 @@ ví dụ:
 
 article = Article.order(published_at: :desc).includes(:authors)
 
+- sử dụng từ khóa size thay vì count để đếm số lượng bản ghi. do count chỉ đếm số lượng bản ghi trong database. size thông minh hơn đếm số lương bản ghi đã lưu trong database, sẽ đếm luôn số lượng bản ghi trên bộ nhớ tạm cache.
+
