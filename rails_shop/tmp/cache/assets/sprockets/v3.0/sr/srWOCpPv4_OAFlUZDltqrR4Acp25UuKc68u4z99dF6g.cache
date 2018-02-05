@@ -1,0 +1,34 @@
+{:uriI"‚file://app/assets/stylesheets/bower.json?type=application/json&id=7d7e3cad07de2b10475846f27f138748da1d477228778cdd5b4bc9304a37b91f:ET:load_pathI"app/assets/stylesheets;T:filenameI"&app/assets/stylesheets/bower.json;T:	nameI"
+bower;T:logical_pathI"bower.json;T:content_typeI"application/json;T:sourceI"Ê{
+  "name": "semantic-ui-card",
+  "description": "Card - Semantic UI",
+  "homepage": "http://www.semantic-ui.com",
+  "author": {
+    "name": "Jack Lukic",
+    "web": "http://www.jacklukic.com"
+  },
+  "ignore": [
+    "docs",
+    "node",
+    "server",
+    "spec",
+    "src",
+    "test"
+  ],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css3",
+    "framework"
+  ],
+  "license": [
+    "http://semantic-ui.mit-license.org/"
+  ],
+  "main": [
+    "card.css"
+  ]
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"4file-digest://app/assets/stylesheets/bower.json;TTF:charsetI"
+utf-8;F:digest"%bÎ"E/6ñF@ÆQÆ<ÆôËë®:‘„i<ÈAl¯r+£:lengthiÊ:dependencies_digest"%Å‘æÄ†ñv¬Íéø­«;FÓSÔ<ÇòIU¹µfp¦:idI"E7d7e3cad07de2b10475846f27f138748da1d477228778cdd5b4bc9304a37b91f;F:
+mtimel+·ÌRZ

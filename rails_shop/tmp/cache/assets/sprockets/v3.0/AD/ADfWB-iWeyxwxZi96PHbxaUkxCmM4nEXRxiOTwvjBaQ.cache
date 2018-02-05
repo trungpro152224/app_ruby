@@ -1,0 +1,23 @@
+{:uriI"Öfile://app/assets/stylesheets/composer.json?type=application/json&id=dc45ad62295a5fe9a81875d08d45fa288cf1c3c2914d7d1493dfbc84ea34c834:ET:load_pathI"app/assets/stylesheets;T:filenameI")app/assets/stylesheets/composer.json;T:	nameI"composer;T:logical_pathI"composer.json;T:content_typeI"application/json;T:sourceI"Ñ{
+  "name": "semantic/card",
+  "description": "Single component release of card",
+  "homepage": "http://www.semantic-ui.com",
+  "authors": [{
+    "name": "Jack Lukic",
+    "email": "jacklukic@gmail.com",
+    "web": "http://www.jacklukic.com",
+    "role": "Creator"
+  }],
+  "keywords": [
+    "semantic",
+    "ui",
+    "css",
+    "framework"
+  ],
+  "license": "MIT",
+  "version": "2.2.13"
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"7file-digest://app/assets/stylesheets/composer.json;TTF:charsetI"
+utf-8;F:digest"%f«HŒ.ãëeÆõlïH¶HœŸ≥M÷~∫“”È¡∏¡:lengthiÑ:dependencies_digest"%õQ7û‰#éÁ†*qıÕ‡1_çŒÏı?yË,2ä:idI"Edc45ad62295a5fe9a81875d08d45fa288cf1c3c2914d7d1493dfbc84ea34c834;F:
+mtimel+∑ÃRZ

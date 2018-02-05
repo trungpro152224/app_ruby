@@ -22,5 +22,10 @@ module RailsShop
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # def set_locale 
+    # I18n.locale = params[:locale] || I18n.defautl_locale
+    # end
+
   end
 end

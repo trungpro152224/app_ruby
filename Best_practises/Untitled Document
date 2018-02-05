@@ -1,0 +1,8 @@
+Best Practices: 
+1.Model
+-Sử dụng named scope thay vì sử dụng câu lệnh where ở mọi nơi. nên đặt scope trong where để rõ nghĩa và dễ quản lý câu lệnh điều kiện trong đối tượng đó.
+ví dụ: 
+ scope :red, -> { where(color: 'red') }
+ scope :football, -> {where(favorates: 'football')}
+
+

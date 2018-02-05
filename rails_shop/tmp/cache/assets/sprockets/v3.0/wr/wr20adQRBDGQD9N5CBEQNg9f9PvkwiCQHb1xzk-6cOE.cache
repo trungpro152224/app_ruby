@@ -1,0 +1,21 @@
+{:uriI"„file://app/assets/stylesheets/package.json?type=application/json&id=3e88e545c0e21282495e7fe8c6ecbd01a0576fb7f1e1bb3c2b049d5d59dc5d9c:ET:load_pathI"app/assets/stylesheets;T:filenameI"(app/assets/stylesheets/package.json;T:	nameI"package;T:logical_pathI"package.json;T:content_typeI"application/json;T:sourceI"Ë{
+  "name": "semantic-ui-card",
+  "version": "2.2.13",
+  "title": "Semantic UI - Card",
+  "description": "Single component release of card",
+  "homepage": "http://www.semantic-ui.com",
+  "author": "Jack Lukic <jack@semantic-ui.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Semantic-Org/UI-Card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Semantic-Org/Semantic-UI/issues"
+  },
+  "devDependencies": {}
+};T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"6file-digest://app/assets/stylesheets/package.json;TTF:charsetI"
+utf-8;F:digest"%zã3N)^qß>Äú¼‘„™èÎ¿ùO*¥;:lengthiË:dependencies_digest"%Û¾°Ûrô™ˆTHCÈR±_yA¤kt.ôËmh':idI"E3e88e545c0e21282495e7fe8c6ecbd01a0576fb7f1e1bb3c2b049d5d59dc5d9c;F:
+mtimel+·ÌRZ
