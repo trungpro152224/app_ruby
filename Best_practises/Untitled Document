@@ -60,4 +60,11 @@ end
 
 - không nên sửa đổi params hash. hash param chứa các dữ liệu đã được gửi yêu cầu, nếu sửa thì không thể truy cập được params đó. nên chép sang một hash params khác và chỉnh sửa. 
 
+3. View 
 
+- sử dụng partial thay vì viết nhiều lại nhiều lần lên form đó. 
+
+ví dụ:
+ render 'form'
+
+_form.html.erb
