@@ -35,4 +35,4 @@ article = Article.order(published_at: :desc).includes(:authors)
 
 - sử dụng find_each thay vì all.each để duyệt số lượng bản ghi lớn. vì all.each sẽ duyệt qua từng đối tượng, còn find_each sẽ truyền đối tượng với 1000 record rồi duyệt từng object trong 1000 record đó. tiếp tục thực hiện khi nào hết record trong đó. 
 
-
+-chỉ sử dụng select các field cần thiết chứ không nên select * (lấy hết các record) để tránh tốn thời gian và xử lý trong bộ nhớ. 
