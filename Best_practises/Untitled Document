@@ -75,4 +75,5 @@ _form.html.erb
 
 - hạn chế sử dụng viết các js, css inline trên form.
 
+- sử dụng js-routes gem để tạo đường dẫn thay vì sử dụng đường dẫn mã hóa
 
