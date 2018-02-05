@@ -126,3 +126,7 @@ context 'when not valid' do
   it { is_expected.to respond_with 422 }
 end
 
+- nên test tất cả các trường hợp có thể
+
+
+
