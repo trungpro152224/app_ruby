@@ -79,4 +79,6 @@ _form.html.erb
 
 - sử dụng i18n gem để mã tranlation js
 
+- sử dụng i18n thay vì hardcode text
+
 
