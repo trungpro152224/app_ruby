@@ -77,3 +77,6 @@ _form.html.erb
 
 - sử dụng js-routes gem để tạo đường dẫn thay vì sử dụng đường dẫn mã hóa
 
+- sử dụng i18n gem để mã tranlation js
+
+
