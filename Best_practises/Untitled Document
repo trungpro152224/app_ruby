@@ -26,4 +26,8 @@ ví dụ:
 
 - sử dụng file seeds.rb thay vì migration để tạo các seed data 
 
+- sử dụng includes để cải thiện N + 1 query giúp việc truy xuất dữ liệu ít tốn kém bộ nhớ hơn.
+ví dụ: 
+
+article = Article.order(published_at: :desc).includes(:authors)
 
