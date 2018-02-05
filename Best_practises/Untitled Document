@@ -130,5 +130,19 @@ end
 
 - giữa expect và should nên trong một dự án luôn chọn cú ph expect. 
 
+- 
+
+
+5. Common
+
+- sử dụng i18n thay vì hardcode 
+
+- xóa tất cả code dư thừa hoặc không nên comment code 
+
+- nên sử dụng Time.zone.now thay vì sử dụng Time.now để cập nhật giờ cho từng địa điểm cụ thể.
+
+- sử dụng các tên biến và hàm có tính gợi nhớ không nên đặt tên như: a, b,...
+
+- các khối mã giống nhau nên kết hợp thành chức năng chung. 
 
 
