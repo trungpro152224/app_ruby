@@ -50,4 +50,12 @@ ví dụ: trung : boolean,  default: true
 
 - tạo các controller tách biệt với các namespace như: admin/user cho user
 
+- sử dụng before_filter để thực hiện thao tác lặp lại
+ví dụ: 
+class PostsController < ApplicationController
+  before_filter :get_post, :only => [:edit, :update, :destroy]
+
+def get_post
+end
+
 
