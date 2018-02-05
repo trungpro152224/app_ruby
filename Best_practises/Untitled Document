@@ -48,4 +48,6 @@ ví dụ: trung : boolean,  default: true
 
 - Nên theo chuẩn RESTful càng nhiều càng tốt như các VERB method: GET, PUT/PATCH, DELETE, POST.
 
+- tạo các controller tách biệt với các namespace như: admin/user cho user
+
 
