@@ -10,3 +10,6 @@ ví dụ:
 scope :today, → { where(published_date: Date.today) }
 thay vì sử dụng:
 scope :today, where(published_date: Date.today))
+
+- Dựa vào yêu cầu thực tế mà sử dụng validation cho thích hợp. 
+ví dụ:  validates :name, presence: true
