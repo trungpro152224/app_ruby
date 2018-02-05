@@ -13,3 +13,12 @@ scope :today, where(published_date: Date.today))
 
 - Dựa vào yêu cầu thực tế mà sử dụng validation cho thích hợp. 
 ví dụ:  validates :name, presence: true
+
+- reject SQL injection để bảo mật dữ liệu người dùng khi truy xuất.
+ví dụ: 
+User.where("name = ?", params[:name])
+instead of:
+User.where("name = '#{params[:name]}'")
+
+
+
