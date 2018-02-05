@@ -1,0 +1,57 @@
+Active Record Query Interface: 
+
+1. so sánh sự khác nhau giữa User.all.each, User.find_each, User.find_in_batches:
+
+User.find.all: tìm và trả về số lượng bản ghi, trong trường hợp số lượng bản ghi quá lớn, việc lưu tất cả các objects trong bộ nhớ sẽ xảy ra tràn bộ nhớ. đó cũng là hạn chế của each.
+
+User.find_each: lấy ra các record theo từng theo từng batch sau đó gọi tới record trong từng khối như một đối tượng riêng. 
+
+User.find_in_batches: cách này tương tự như find_each nhưng find_in_batches sẽ gọi tới các batches đưa vào trong block dưới dạng một mảng các record thay vì lần lượt đưa từng record vào. cách này hiệu quả hơn so với các cách còn lại trong việc thao tác số lượng lớn bản ghi. 
+
+
+2. so sánh điều kiện khi sử dụng pure string ,array và hash: 
+
+pure string conditions là điều kiện kiểu chuỗi. ví dụ: 
+User.where("name ='trung' AND age = 23")
+
+array conditions là dạng điều kiện mảng. ví dụ: 
+User.where(["name = ?, AND age = ?", 'Trung', 23])
+
+hash conditions là dạng điều kiện hash. trong đó sẽ mang các key và values tương ứng. ví dụ: 
+User.where({name: "trung", age: 23})
+
+
+3. tìm hiểu về N + 1 query và cơ chế eager loading
+
+Khi load dữ liệu của một model "con" trong một mối quan hệ parent-child (hay phần "nhiều" trong quan hệ một-nhiều). Phần lớn các ORM mặc định kích hoạt chức năng lazy-loading, nên các truy vấn được tìm tới bản ghi "cha", sau đó mới thực hiện từng truy vấn đối với các bản ghi "con".thực hiện N+1 truy vấn thay vì 1 truy vấn sẽ có thể làm tràn bộ nhớ của database.
+ví dụ:
+
+clients = Client.limit(10)
+ 
+clients.each do |client|
+  puts client.address.postcode
+end
+
+chạy 1 truy vấn để lấy 10 địa chỉ mới nhất và sau đó chạy 10 truy vấn để lấy được các postcode tương ứng.
+để hạn chế truy vấn N + 1 thì ta sẽ dùng includes với cơ chết eager loading.
+Eager Loading là một cơ chế cho phép load các bản ghi có liên quan đến đối tượng được trả về
+và sử dụng số truy vấn ít nhất có thể. 
+
+
+clients = clients.includes(:address).limit(10)
+ 
+clients.each do |client|
+  puts client.address.postcode
+end
+
+includes sử dụng cơ chế eager loading nên tránh được tình trạng N + 1 query.
+
+
+
+4. tìm hiểu về scope và các thành phần của 1 scope: 
+
+Scopes là cách viết rút gọn của câu truy vấn dữ liệu trong Rails. Chúng được sử dụng thường xuyên khi chúng ta muốn lấy ra các đối tượng dữ liệu từ cơ sở dữ liệu.
+
+ví dụ: scope :published, -> { where(status: "published") 
+
+có thể mặc định khi truy xuất các đối tượng sẽ chạy câu lệnh trong scope. ta sử dụng default_scope và muốn xóa cope thì ra sử dụng unscoped.
