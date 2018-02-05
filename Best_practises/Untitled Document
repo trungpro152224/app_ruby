@@ -73,3 +73,6 @@ _form.html.erb
 
 - không nên sử dụng truy vấn trong view 
 
+- hạn chế sử dụng viết các js, css inline trên form.
+
+
