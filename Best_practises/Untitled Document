@@ -128,5 +128,7 @@ end
 
 - nên test tất cả các trường hợp có thể
 
+- giữa expect và should nên trong một dự án luôn chọn cú ph expect. 
+
 
 
