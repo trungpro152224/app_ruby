@@ -41,3 +41,9 @@ article = Article.order(published_at: :desc).includes(:authors)
 
 - luôn set gía trị mặc định cho boolean trong model
 ví dụ: trung : boolean,  default: true
+
+2. Controller 
+
+-Controller có nhiều chức năng phức tạp có tính logic nhiều nên chuyển qua lớp dịch vụ (service layer)
+
+
