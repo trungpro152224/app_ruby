@@ -83,4 +83,16 @@ _form.html.erb
 
 - khi sử dụng theme, nên sử dụng 2-3 file css thay vì chỉ sử dụng 1 file application.css mà rails cung cấp.
 
+4. Unit test 
+
+- khi sử dụng descripe method thì nên đặt tên theo tên theo tên class, hay tên biến. 
+
+ví dụ:
+#BAD
+describe 'the authenticate method for User' do
+describe 'if the user is an admin' do
+
+#GOOD
+describe '.authenticate' do
+describe '#admin?' do
 
