@@ -20,5 +20,7 @@ User.where("name = ?", params[:name])
 instead of:
 User.where("name = '#{params[:name]}'")
 
-
+- luôn tạo các index trong model để dễ dàng quản lý việc truy xuất dữ liệu nhanh hơn. 
+ví dụ: 
+  add_index :public, :public_id
 
