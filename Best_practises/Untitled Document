@@ -81,4 +81,6 @@ _form.html.erb
 
 - sử dụng i18n thay vì hardcode text
 
+- khi sử dụng theme, nên sử dụng 2-3 file css thay vì chỉ sử dụng 1 file application.css mà rails cung cấp.
+
 
