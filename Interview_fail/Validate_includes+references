@@ -1,0 +1,27 @@
+
+tạo 1 custom validation cho 1 thằng user theo cách định sẵn sau
+
+nếu thằng user đó có tuổi nhỏ hơn 18 thì add 1 cái error cho nó với nội dung "you can not view the 18+ video"
+
+class User
+   validate :can_view_video
+
+  private
+   def can_view_video
+   end
+end
+
+
+==============================
+bài giải: 
+
+Class User 
+	validate :can_view_video
+
+	private
+	def can_view_video
+
+	if user.age > 18 
+		errors.add(:age, "you can not view the 18+ video")
+	end
+end
